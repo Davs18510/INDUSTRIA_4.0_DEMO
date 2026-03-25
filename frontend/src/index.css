@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #05070f;
-  --surface-color: rgba(26, 35, 51, 0.4);
-  --surface-border: rgba(255, 255, 255, 0.08);
-  --primary-color: #00e5ff;
-  --primary-glow: rgba(0, 229, 255, 0.4);
-  --alert-color: #ff2a5f;
-  --alert-glow: rgba(255, 42, 95, 0.5);
-  --warning-color: #ffaa00;
-  --text-main: #f0f4f8;
-  --text-muted: #8b9bb4;
-  --success-color: #00ff88;
+  --bg-color: #0b1120;
+  --surface-color: rgba(15, 23, 42, 0.6);
+  --surface-border: rgba(148, 163, 184, 0.1);
+  --primary-color: #38bdf8;
+  --primary-dark: #0284c7;
+  --primary-glow: rgba(56, 189, 248, 0.3);
+  --alert-color: #ef4444;
+  --alert-glow: rgba(239, 68, 68, 0.3);
+  --warning-color: #f59e0b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --success-color: #10b981;
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -77,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-gradient {
   background: -webkit-linear-gradient(135deg, #ffffff, var(--primary-color));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import './App.css';
 import { generateLocalIoTData, analyzeLocalIoTData } from './SimulationEngine';
+import SimulationComparison from './SimulationComparison';
 
 const API_URL = 'http://localhost:3001/api';
 
@@ -205,9 +206,8 @@ function App() {
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px', color: 'var(--primary-color)'}}>
            <Factory size={48} />
         </div>
-        {/* Título alterado como solicitado: Apenas Simulação */}
         <h1>Indústria 4.0 <span className="text-gradient">Simulação</span></h1>
-        <p>Gere fisicamente a planilha de sensores com comportamentos randômicos e avalie o diagnóstico analítico dos pontos críticos de manutenção ou quebras da planta fábril.</p>
+        <p>Acompanhe o mapeamento térmico e de desgaste pelo Digital Twin em 3D. Gere a malha para visualizar o status de cada ativo afetado.</p>
       </header>
 
       {/* Passo 1 - Gerar Arquivo e Arrastar (Dropzone) */}
@@ -280,17 +280,7 @@ function App() {
             ) : (
                 <div className="anomaly-list">
                   {analysisResult.anomalies.map((an, idx) => (
-                    <div key={idx} className="anomaly-item">
-                      <h4>
-                        <span>{an.MachineID} <span style={{ color: 'var(--text-muted)' }}> | {an.Sector}</span></span>
-                        <span style={{ background: 'var(--alert-color)', padding: '6px 12px', borderRadius: '4px', fontSize: '1rem' }}>
-                          Nível do Sistema OEE: {an.Severity}
-                        </span>
-                      </h4>
-                      <ul>
-                        {an.Issues.map((issue, i) => <li key={i}>{issue}</li>)}
-                      </ul>
-                    </div>
+                    <SimulationComparison key={idx} machineData={an} />
                   ))}
                 </div>
             )}
